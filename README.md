@@ -1,5 +1,7 @@
 # LightService::I18n
 
+[![Ruby](https://github.com/light-service/light_service-i18n/actions/workflows/main.yml/badge.svg)](https://github.com/light-service/light_service-i18n/actions/workflows/main.yml)
+
 i18n extensions for light_service
 
 ## Installation
