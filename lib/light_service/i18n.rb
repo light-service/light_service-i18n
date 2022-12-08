@@ -15,3 +15,21 @@ module LightService
 end
 
 LightService::Configuration.localization_adapter = LightService::I18n::LocalizationAdapter.new
+
+LightService::Configuration.singleton_class.prepend(
+  Module.new do
+    def locale=(locale)
+      ::I18n.config.instance_variable_set(:@locale, locale)
+      super(locale)
+    end
+  end
+)
+
+::I18n.singleton_class.prepend(
+  Module.new do
+    def locale=(locale)
+      LightService::Configuration.instance_variable_set(:@locale, locale)
+      super(locale)
+    end
+  end
+)
