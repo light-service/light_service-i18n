@@ -1,0 +1,11 @@
+inherit_gem:
+  light-service: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 2.7.4
+  Exclude:
+    - "bin/*"
+    - 'vendor/bundle/**/*'
+
+Style/LambdaCall:
+  Enabled: false
